@@ -24,8 +24,8 @@ ostream& color(ostream& text) {
 
 
 //////////MAIN///////////
-int main()
-{
+int main(){
+
 	//ПОДКЛЮЧЕНИЕ РУССКОГО ЯЗЫКА
 	setlocale(LC_ALL, "RUS");
 	srand(time(NULL));
@@ -115,8 +115,8 @@ int main()
 	init(EnemyShipLocation, cells);
 	/////////////////////////////////
 
-PlaySound(nyTbM, NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
-system("cls");
+	PlaySound(nyTbM, NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+	system("cls");
 	//расстановка кораблей игрока
 	bool cook = 0;
 	for (int i = 0; i < vsegoShip; i++)
@@ -586,11 +586,12 @@ system("cls");
 				cout << h[i];
 			}
 			cout << endl;
+
 			VragIded(boq, ohered, PlayerShipLocation, PlayerShipLocationNumber, cells);//ХОД ПРОТИВНИКА
-			if (ohered)
-			{
-				cout << endl << color<11, 0> << "\n\tПО ВАШЕМУ СУДНУ ПОПАЛИ" << color << endl;
-			}
+
+			if (ohered)cout << endl << color<11, 0> << "\n\tПО ВАШЕМУ СУДНУ ПОПАЛИ" << color << endl;
+			if (!ohered)cout << endl << color<11, 0> << "\n\tПРОТИВНИК ПРОМАЗАЛ" << color << endl;
+
 		} while (ohered);
 		//УВЕДОМЛЕНИЕ О ПРОИГРЕШЕ
 		if (boq == NumberOfShipCells) {
