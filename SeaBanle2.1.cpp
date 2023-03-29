@@ -1,12 +1,12 @@
 ﻿#include <iostream>
 #include <Windows.h>
 #include "BattleFoo.h"
-//#include <mmsystem.h>
+#include <mmsystem.h>
 #include <stdlib.h>
-//#include <fstream>
-//#include <locale>
-//#include <cctype>
-//#include<conio.h>
+#include <fstream>
+#include <locale>
+#include <cctype>
+#include<conio.h>
 
 //#pragma comment(lib, "winmm.lib")
 
