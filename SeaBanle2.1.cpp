@@ -587,12 +587,12 @@ int main(){
 			}
 			cout << endl;
 
-			VragIded(boq, ohered, PlayerShipLocation, PlayerShipLocationNumber, cells);//ХОД ПРОТИВНИКА
+			VragIded(boq, oheredV, PlayerShipLocation, PlayerShipLocationNumber, cells);//ХОД ПРОТИВНИКА
 
-			if (ohered)cout << endl << color<11, 0> << "\n\tПО ВАШЕМУ СУДНУ ПОПАЛИ" << color << endl;
-			if (!ohered)cout << endl << color<11, 0> << "\n\tПРОТИВНИК ПРОМАЗАЛ" << color << endl;
+			if (oheredV==1)cout << endl << color<11, 0> << "\n\tПО ВАШЕМУ СУДНУ ПОПАЛИ" << color << endl;
+			if (oheredV==0)cout << endl << color<11, 0> << "\n\tПРОТИВНИК ПРОМАЗАЛ" << color << endl;
 
-		} while (ohered);
+		} while (oheredV==1);
 		//УВЕДОМЛЕНИЕ О ПРОИГРЕШЕ
 		if (boq == NumberOfShipCells) {
 			system("cls");

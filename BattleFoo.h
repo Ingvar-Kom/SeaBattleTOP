@@ -242,7 +242,7 @@ void TheMap(int& boi, bool& ohered, int** arr, char** ShipLocation, int num, int
 
 }
 //ход противника
-void VragIded(int& boiS, bool& ohered, char** ShipLocation, int** arr, int cells) {
+void VragIded(int& boiS, bool& Och, char** ShipLocation, int** arr, int cells) {
 	int r = 0;
 	int num = 0;
 	int numCh = 0;
@@ -255,13 +255,13 @@ void VragIded(int& boiS, bool& ohered, char** ShipLocation, int** arr, int cells
 			if (arr[numCh][num] == 1)
 			{
 				ShipLocation[numCh][num] = 'X';
-				ohered = 1;
+				Och = 1;
 				boiS++;
 			}
 			if (arr[numCh][num] != 1)
 			{
 				ShipLocation[numCh][num] = '.';
-				ohered = 0;
+				Och = 0;
 			}
 			r = 1;
 		}
