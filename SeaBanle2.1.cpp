@@ -8,7 +8,7 @@
 #include <cctype>
 #include<conio.h>
 
-//#pragma comment(lib, "winmm.lib")
+#pragma comment(lib, "winmm.lib")
 
 using namespace std;
 
@@ -50,10 +50,10 @@ int main()
 	bool oheredV = 0;
 	//
 	//переменная с путём к аудео файлу
-	//wchar_t nyTb[] = L"G.wav";
-	//wchar_t nyTbpobed[] = L"B.wav";
-	//wchar_t nyTbover[] = L"F.wav";
-	//wchar_t nyTbM[] = L"MENU.wav";
+	wchar_t nyTb[] = L"G.wav";
+	wchar_t nyTbpobed[] = L"B.wav";
+	wchar_t nyTbover[] = L"F.wav";
+	wchar_t nyTbM[] = L"MENU.wav";
 	//
 	//
 	//int num;
@@ -94,9 +94,6 @@ int main()
 	string h = "###############################################";
 	/////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-
 	//ДИСКЛЕЙМЕР
 	cout << color<4, 0> << "\t\t\t  !ВНИМАНИЕ!" << color<2, 0> \
 		<< "\n\tрасстановка кораблей (с верху в низ\\с лева на право)\n ввод координат по оси Y производится Английскими заглавными буквами" << color << endl\
@@ -118,8 +115,8 @@ int main()
 	init(EnemyShipLocation, cells);
 	/////////////////////////////////
 
-	//PlaySound(nyTbM, NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
-	//system("cls");
+PlaySound(nyTbM, NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+system("cls");
 	//расстановка кораблей игрока
 	bool cook = 0;
 	for (int i = 0; i < vsegoShip; i++)
@@ -542,8 +539,9 @@ int main()
 	cout << color<4, 0> << "ВНИМАНИЕ!\nбой может работать не коректно\nпротивник может раставляеть корабли не по правилам " << color << endl;
 	Sleep(4000);
 
+
 	//ПОДКЛЮЧЕНИЯ МУЗЫКИ
-	//PlaySound(nyTb, NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+	PlaySound(nyTb, NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 	//бой
 	bool doo = 0;
 	do
@@ -573,7 +571,7 @@ int main()
 		if (bo == NumberOfShipCells) {
 			system("cls");
 			cout << color<2, 0> << "ВЫ ВЫЙГРАЛИ" << color << endl;
-			//PlaySound(nyTbpobed, NULL, NULL);
+			PlaySound(nyTbpobed, NULL, NULL);
 			Sleep(4000);//иначе выход из цыкла не работает
 			rund = 1;
 			exit(0);
@@ -598,7 +596,7 @@ int main()
 		if (boq == NumberOfShipCells) {
 			system("cls");
 			cout << color<4, 0> << "ВЫ ПРОИГРАЛИ" << color << endl;
-			//PlaySound(nyTbover, NULL, NULL);
+			PlaySound(nyTbover, NULL, NULL);
 			Sleep(4000);//иначе выход из цыкла не работает
 			rund = 1;
 			exit(0);
