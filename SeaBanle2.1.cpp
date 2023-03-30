@@ -592,7 +592,9 @@ int main(){
 			{
 				Y = rand() % cells;//numCh
 				X = rand() % cells;//num
-				if (PlayerShipLocation[Y][X] == 'X'||PlayerShipLocation[Y][X] == '.')povtor = 1;
+				if (PlayerShipLocation[Y][X] == 'X' || PlayerShipLocation[Y][X] == '.') {
+					povtor = 1;
+				}
 				else if (PlayerShipLocation[Y][X] != 'X')
 				{
 					if (PlayerShipLocationNumber[Y][X] == 1)
