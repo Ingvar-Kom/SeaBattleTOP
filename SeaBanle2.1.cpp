@@ -544,6 +544,7 @@ int main(){
 	PlaySound(nyTb, NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 	//бой
 	bool doo = 0;
+	int povtor = 0;
 	do
 	{
 		system("cls");
@@ -577,6 +578,7 @@ int main(){
 			exit(0);
 		}
 
+		//ХОД ПРОТИВНИКА
 		do
 		{
 			cout << "\nХОД ПРОТИВНИКА\n";
@@ -586,8 +588,30 @@ int main(){
 				cout << h[i];
 			}
 			cout << endl;
-
-			VragIded(boq, oheredV, PlayerShipLocation, PlayerShipLocationNumber, cells);//ХОД ПРОТИВНИКА
+			do
+			{
+				Y = rand() % cells;//numCh
+				X = rand() % cells;//num
+				if (PlayerShipLocation[Y][X] == 'X'||PlayerShipLocation[Y][X] == '.')povtor = 1;
+				else if (PlayerShipLocation[Y][X] != 'X')
+				{
+					if (PlayerShipLocationNumber[Y][X] == 1)
+					{
+						PlayerShipLocation[Y][X] = 'X';
+						oheredV = 1;
+						boq ++;
+					}
+					if (PlayerShipLocationNumber[Y][X] != 1)
+					{
+						PlayerShipLocation[Y][X] = '.';
+						oheredV = 0;
+					}
+					povtor = 0;
+				}
+				
+				
+			} while (povtor==1);
+			
 
 			if (oheredV==1)cout << endl << color<11, 0> << "\n\tПО ВАШЕМУ СУДНУ ПОПАЛИ" << color << endl;
 			if (oheredV==0)cout << endl << color<11, 0> << "\n\tПРОТИВНИК ПРОМАЗАЛ" << color << endl;

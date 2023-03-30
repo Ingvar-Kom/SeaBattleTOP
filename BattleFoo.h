@@ -208,7 +208,7 @@ void MapVertically(int num, int numCh, int** arr, char** ShipLocation) {
 
 //
 //присваение местополажения корабля противника
-void initVrag(int** arr, int NumberOfShipCells, int cells) {
+void initVrag(int** arr, int NumberOfShipCells, int &cells) {
 	bool boo = 0;
 	int I = 0;
 	int J = 0;
@@ -242,33 +242,11 @@ void TheMap(int& boi, bool& ohered, int** arr, char** ShipLocation, int num, int
 
 }
 //ход противника
-void VragIded(int& boiS, bool& Och, char** ShipLocation, int** arr, int cells) {
-	int r = 0;
-	int num = 0;
-	int numCh = 0;
-	do {
-		r == 0;
-		num = rand() % cells;
-		numCh = rand() % cells;
-		if (ShipLocation[numCh][num] != 'X')
-		{
-			if (arr[numCh][num] == 1)
-			{
-				ShipLocation[numCh][num] = 'X';
-				Och = 1;
-				boiS++;
-			}
-			if (arr[numCh][num] != 1)
-			{
-				ShipLocation[numCh][num] = '.';
-				Och = 0;
-			}
-			r = 1;
-		}
-	} while (r == 0);
-
-
+void randVrag(int& num, int& numCh, int& cells) {
+	num = rand() % cells;
+	numCh = rand() % cells;
 }
+
 
 //отчистка поля от ненужной информации
 void ClearingTheField(int** arr, char** ShipLocation, int sz) {
