@@ -41,7 +41,7 @@ int main(){
 	//
 	//переменные
 	bool def = 0;
-	int NumS;
+	char NumS;
 	int vsegoShip = 10;
 	int rund = 0;
 	int bo = 0;
@@ -135,18 +135,55 @@ int main(){
 			<< endl << endl;
 		do
 		{
+			cin.clear();
 			cook = 0;
 			cout << "Выбирите номер корабля: ";
 			cin >> NumS;
-			if (NumberOfShips[NumS - 1] == 0)
-			{
-				cout << color<4, 0> << "\nэти корабли закончились\n" << color;
+			if (NumS != '1' && NumS != '2' && NumS != '3' && NumS != '4' && NumS != '5') {
+				cout << color<4, 0> << "\nНЕВЕРНЫЙ ВВОД ДАННЫХ\n" << color;
 				cook = 1;
 			}
-		} while (cook);
+			
+			if (NumS == '1'){
+				if (NumberOfShips[0] == 0)
+				{
+					cout << color<4, 0> << "\nэти корабли закончились\n" << color;
+					cook = 1;
+				}
+			}
+			if (NumS == '2') {
+				if (NumberOfShips[1] == 0)
+				{
+					cout << color<4, 0> << "\nэти корабли закончились\n" << color;
+					cook = 1;
+				}
+			}
+			if (NumS == '3') {
+				if (NumberOfShips[2] == 0)
+				{
+					cout << color<4, 0> << "\nэти корабли закончились\n" << color;
+					cook = 1;
+				}
+			}
+			if (NumS == '4') {
+				if (NumberOfShips[3] == 0)
+				{
+					cout << color<4, 0> << "\nэти корабли закончились\n" << color;
+					cook = 1;
+				}
+			}
+			if (NumS == '5') {
+				if (NumberOfShips[4] == 0)
+				{
+					cout << color<4, 0> << "\nэти корабли закончились\n" << color;
+					cook = 1;
+				}
+			}
+			
+		} while (cook==1);
 
 		//растановка однопалубного корабля
-		if (NumS == 1)
+		if (NumS == '1')
 		{
 
 			system("cls");
@@ -184,7 +221,7 @@ int main(){
 			NumberOfShips[0]--;
 		}
 		//расстановка двухпалубного корабля
-		if (NumS == 2)
+		if (NumS == '2')
 		{
 
 			system("cls");
@@ -271,7 +308,7 @@ int main(){
 			NumberOfShips[1]--;
 		}
 		//расстановка трёхпалубного корабля
-		if (NumS == 3)
+		if (NumS == '3')
 		{
 
 			system("cls");
@@ -357,7 +394,7 @@ int main(){
 			NumberOfShips[2]--;
 		}
 		//расстановка четырёхпалубного корабля
-		if (NumS == 4)
+		if (NumS == '4')
 		{
 
 			system("cls");
@@ -443,7 +480,7 @@ int main(){
 			NumberOfShips[3]--;
 		}
 		//расстановка петипалубного корабля
-		if (NumS == 5)
+		if (NumS == '5')
 		{
 			system("cls");
 			cout << "1 по вертикали\n2 по горизонтали\nвертеь в: ";
